@@ -1,0 +1,1 @@
+[03-Jul-2020 18:49:03 UTC] PHP Fatal error:  Trait 'Illuminate\Database\Eloquent\softDeletes' not found in /home/eprotal/public_html/app/Slider.php on line 10
