@@ -12,7 +12,7 @@ use Image;
 
 class WorkController extends Controller
 {
-  public function smsSent($id)
+  public function smsSent($id, $numbar)
   {
     $setting = Setting::first();
     $work = Work::find($id);
@@ -28,15 +28,15 @@ class WorkController extends Controller
     // Data for text message. This is the text message data.
     $sender = $setting->sms_sender_id; // This is who the message appears to be from.
     $numbers = $cuntrycode. $client->mobile; // A single number or a comma-seperated list of numbers
-    if ($work->sms_status == 1) {
+    if ($numbar == 1) {
       $message = $setting->sms1;
       $work->sms_status = 2;
       $work->save();
-    } elseif ($work->sms_status == 2) {
+    } elseif ($numbar == 2) {
       $message = $setting->sms2;
       $work->sms_status = 3;
       $work->save();
-    } elseif ($work->sms_status == 3) {
+    } elseif ($numbar == 3) {
       $message = $setting->sms3;
     }
     // 612 chars or less
@@ -79,7 +79,7 @@ class WorkController extends Controller
   }
     public function listWork()
     {
-      $work = Work::with('client')->get();
+      $work = Work::orderBy('id','desc')->get();
       return view('admin.work_list', compact('work'));
     }
     public function addWork()
@@ -107,8 +107,9 @@ class WorkController extends Controller
     public function saveWork(Request $request)
     {
       $request->validate([
-          'client_id'=>'required',
-      ]);
+        'name'=>'required',
+        'contact_numbar'=>'required',
+    ]);
       if ($request->file('images1')) {
         $images1    = $request->file('images1');
         $fileName1 = time() . '1.' . $request->file('images1')->extension();
@@ -170,10 +171,8 @@ class WorkController extends Controller
         $images10->move($filePath10, $fileName10);
       }
 
-
-
        $work = new Work();
-       $work->client_id = $request->client_id;
+       $work->name = $request->name;
        $work->company_name = $request->company_name;
        $work->company_address = $request->company_address;
        $work->name_of_owner = $request->name_of_owner;
@@ -311,7 +310,6 @@ class WorkController extends Controller
        $work->bank_name = $request->bank_name;
        $work->gmail = $request->gmail;
        $work->gmail_password = $request->gmail_password;
-       $work->contact_numbar = $request->contact_numbar;
        $work->submission_id1 = $request->submission_id1;
        $work->submission_id2 = $request->submission_id2;
        $work->note = $request->note;

@@ -9,6 +9,9 @@ Route::get('/e-service/{id}','website\FrontingComtroller@service')->name('servic
 Route::get('/services/{id}','website\FrontingComtroller@Client')->name('service-client');
 Route::post('/services/save-services','ClientController@saveClient')->name('save-client');
 
+Route::get('/registration','website\registrationController@registration')->name('registration');
+Route::post('/registration','website\registrationController@store')->name('registration.Store');
+
 
 Auth::routes();
 
@@ -32,7 +35,7 @@ Route::post('/work/update','WorkController@updateWork')->name('update-work');
 Route::get('/work/success/{id}','WorkController@successWork')->name('success-work');
 Route::get('/work/payment/{id}','WorkController@sumPaymentWork')->name('sumPayment-work');
 Route::get('/work/fullpayment/{id}','WorkController@fullPaymentWork')->name('fullPayment-work');
-Route::get('/work/sms-sent/{id}','WorkController@smsSent')->name('smsSent-work');
+Route::get('/work/sms-sent/{id}/{num}','WorkController@smsSent')->name('smsSent-work');
 
 //Client
 Route::get('/client/add','ClientController@clientAdd')->name('add-client');

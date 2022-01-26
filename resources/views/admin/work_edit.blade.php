@@ -34,15 +34,7 @@
 
                                     <div class="form-group">
                                         <label for="title" class="control-label">Name</label>
-                                            <input type="text" class="form-control" value="{{ $work->client->name }}" readonly/>
-                                      </div>
-                                      <div class="form-group">
-                                          <label for="title" class="control-label">Mobile</label>
-                                              <input type="text" class="form-control" value="{{ $work->client->mobile }}" readonly/>
-                                      </div>
-                                      <div class="form-group">
-                                          <label for="due" class="control-label">Service</label>
-                                              <input type="text" class="form-control" value="{{ $work->client->service }}" readonly/>
+                                            <input type="text" class="form-control" value="{{ $work->name }}" readonly/>
                                       </div>
                                     <div class="form-group">
                                         <label for="title" class="control-label">Company Name</label>
@@ -59,13 +51,6 @@
                                         <label for="title" class="control-label">Name of Owner</label>
                                             <input type="text" name="name_of_owner" class="form-control" value="{{$work->name_of_owner}}" />
                                             @error('name_of_owner')
-                                            <strong class="text-danger">{{$message}}</strong>
-                                            @enderror
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="title" class="control-label">Contact Numbar</label>
-                                            <input type="text" name="contact_numbar" class="form-control" value="{{$work->contact_numbar}}" />
-                                            @error('contact_numbar')
                                             <strong class="text-danger">{{$message}}</strong>
                                             @enderror
                                     </div>
@@ -97,24 +82,29 @@
                                             <strong class="text-danger">{{$message}}</strong>
                                             @enderror
                                     </div>
+                                    <div class="form-group">
+                                        <label for="title" class="control-label">National ID</label>
+                                            <input type="text" name="national_id" class="form-control" value="{{$work->national_id}}" />
+                                            @error('national_id')
+                                            <strong class="text-danger">{{$message}}</strong>
+                                            @enderror
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="title" class="control-label">Tin Certificate</label>
+                                            <input type="text" name="tin_certificate" class="form-control" value="{{$work->tin_certificate}}" />
+                                            @error('tin_certificate')
+                                            <strong class="text-danger">{{$message}}</strong>
+                                            @enderror
+                                    </div>
 
                                 </div>
 
                                 <div class="col-md-4">
-                                  <div class="form-group">
-                                      <label for="title" class="control-label">National ID</label>
-                                          <input type="text" name="national_id" class="form-control" value="{{$work->national_id}}" />
-                                          @error('national_id')
-                                          <strong class="text-danger">{{$message}}</strong>
-                                          @enderror
-                                  </div>
-                                  <div class="form-group">
-                                      <label for="title" class="control-label">Tin Certificate</label>
-                                          <input type="text" name="tin_certificate" class="form-control" value="{{$work->tin_certificate}}" />
-                                          @error('tin_certificate')
-                                          <strong class="text-danger">{{$message}}</strong>
-                                          @enderror
-                                  </div>
+                                    <div class="form-group">
+                                        <label for="title" class="control-label">Mobile</label>
+                                            <input type="text" class="form-control" value="{{ $work->contact_numbar }}" readonly/>
+                                    </div>
+                              
                                   <div class="form-group">
                                       <label for="title" class="control-label">Bank Account Numbar</label>
                                           <input type="text" name="bank_account_numbar" class="form-control" value="{{$work->bank_account_numbar}}" />

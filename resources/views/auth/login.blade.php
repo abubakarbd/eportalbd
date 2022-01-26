@@ -25,7 +25,7 @@
         <!-- =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= -->
         <!--LOGO-->
         <div class="logo">
-            <img alt="logo" src="{{asset('/')}}assets/admin/images/logo-dark.png" />
+            {{-- <img alt="logo" src="{{asset('/')}}assets/admin/images/logo-dark.png" /> --}}
         </div>
         <div class="box">
             <!--SIGN IN FORM-->

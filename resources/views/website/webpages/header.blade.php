@@ -22,6 +22,7 @@
             <a href="{{route('index')}}" class="nav-item nav-link text-info" id="{{request()->is('/') ? 'active' : ''}}"> হোম </a>
             <a href="{{route('notice')}}" class="nav-item nav-link text-info" id="{{request()->is('notice') ? 'active' : ''}}"> নোটিশ </a>
             <a href="{{route('products')}}" class="nav-item nav-link text-info" id="{{request()->is('products') ? 'active' : ''}}"> সকল প্রডাক্ট  </a>
+            <a href="{{route('registration')}}" class="nav-item nav-link text-info" id="{{request()->is('products') ? 'active' : ''}}"> Registration Form</a>
             <!-- <a href="#" class="profile nav-item nav-link text-info"> <img class="rounded-circle" width="32" height="32" src="{{asset('/')}}website/assat/img/avatar.png"> <img width="20" height="20" src="{{asset('/')}}website/assat/img/gold.png"> <span class="badge">0</span> </a> -->
         </div>
     </div>

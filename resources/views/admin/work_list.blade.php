@@ -33,8 +33,6 @@
                                         <th>Sl No</th>
                                         <th>Name</th>
                                         <th>Mobile</th>
-                                        <th>Service</th>
-                                        <th>Contract</th>
                                         <th>Payment</th>
                                         <th>Due</th>
                                         <th>Note</th>
@@ -48,10 +46,8 @@
                                     @foreach($work as $row)
                                     <tr>
                                         <td>{{$i}}</td>
-                                        <td>{{$row->client->name}}</td>
-                                        <td>{{$row->client->mobile}}</td>
-                                        <td>{{$row->client->service}}</td>
-                                        <td>{{$row->contract}}</td>
+                                        <td>{{$row->name}}</td>
+                                        <td>{{$row->contact_numbar}}</td>
                                         <td>{{$row->payment}}</td>
                                         <td>{{$row->due}}</td>
                                         <td>{{$row->note}}</td>
@@ -76,8 +72,9 @@
                                         <td class="text-center">
                                             <a href="{{route('view-work',$row->id)}}" class="btn btn-success btn-xs"><i class="fa fa-eye"></i></a>
                                             <a href="{{route('edit-work',$row->id)}}" class="btn btn-primary btn-xs"><i class="fa fa-edit"></i></a>
-                                            <a href="{{route('smsSent-work',$row->id)}}" class="btn btn-info btn-xs"><i class="fa fa-paper-plane-o"></i></a>
-                                            <a href="{{route('delete-client',$row->id)}}" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i></a>
+                                            <a href="{{url('work/sms-sent/'.$row->id.'/1')}}" class="btn btn-info btn-xs">1 - <i class="fa fa-paper-plane-o"></i></a>
+                                            <a href="{{url('work/sms-sent/'.$row->id.'/2')}}" class="btn btn-info btn-xs">2 - <i class="fa fa-paper-plane-o"></i></a>
+                                            <a href="{{url('work/sms-sent/'.$row->id.'/3')}}" class="btn btn-info btn-xs">3 - <i class="fa fa-paper-plane-o"></i></a>
                                         </td>
                                     </tr>
                                     @php($i++)

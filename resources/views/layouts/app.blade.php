@@ -156,6 +156,9 @@
                             <ul class="nav nav-left-lines" id="main-nav">
                                 <!--HOME-->
                                 <li class="{{request()->is('dashboard') ? 'active-item' : ''}}"><a href="{{route('dashboard')}}"><i class="fa fa-home" aria-hidden="true"></i><span>Dashboard</span></a></li>
+                                {{-- Work --}}
+                                <li class="{{request()->is('work/list') ? 'active-item' : ''}}"><a href="{{route('list-work')}}">
+                                    <i class="fa fa-home" aria-hidden="true"></i><span>Manage Work</span></a></li>
 
                                  <!--CLIENT-->
                                 <li class="has-child-item close-item {{request()->is('client/*') ? 'open-item' : ''}}">
@@ -164,14 +167,7 @@
                                         <li class="{{request()->is('client/manage-client') ? 'active-item' : ''}}"><a href="{{route('manage-client')}}">Manage Client</a></li>
                                     </ul>
                                 </li>
-                                 <!--Work-->
-                                <li class="has-child-item close-item {{request()->is('work/*') ? 'open-item' : ''}}">
-                                    <a><i class="fa fa-users" aria-hidden="true"></i><span>Work</span> </a>
-                                    <ul class="nav child-nav level-1">
-                                        <li class="{{request()->is('work/list') ? 'active-item' : ''}}"><a href="{{route('list-work')}}">Manage Work</a></li>
-                                    </ul>
-                                </li>
-
+                                 
                                <!--Slider-->
                                 <li class="has-child-item close-item {{request()->is('slider/*') ? 'open-item' : ''}}">
                                     <a><i class="fa fa-exchange" aria-hidden="true"></i><span>Slider</span> </a>

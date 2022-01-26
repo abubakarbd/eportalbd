@@ -30,14 +30,13 @@
                             <form method="POST" action="{{route('save-work')}}" enctype="multipart/form-data">
                                 @csrf
                                 <div class="col-md-4">
+                                    
                                     <div class="form-group">
-                                        <label for="service_id" class="control-label">Client<span class="required">*</span></label>
-                                            <select name="client_id" id="client_id" class="form-control">
-                                                <option value=""> Select Client </option>
-                                                @foreach($client as $row)
-                                                <option value="{{$row->id}}"> {{$row->name}} </option>
-                                                @endforeach
-                                            </select>
+                                        <label for="title" class="control-label">Name<span class="required">*</span></label>
+                                            <input type="text" name="name" class="form-control" id="name" placeholder="Client Name " value="{{old('company_name')}}" />
+                                            @error('name')
+                                            <strong class="text-danger">{{$message}}</strong>
+                                            @enderror
                                     </div>
                                     <div class="form-group">
                                         <label for="title" class="control-label">Company Name<span class="required">*</span></label>
@@ -106,6 +105,13 @@
                                 </div>
 
                                 <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label for="title" class="control-label">Contact Numbar<span class="required">*</span></label>
+                                            <input type="text" name="contact_numbar" class="form-control" id="title" placeholder="Contact Numbar" value="{{old('contact_numbar')}}" />
+                                            @error('contact_numbar')
+                                            <strong class="text-danger">{{$message}}</strong>
+                                            @enderror
+                                    </div>
                                       <div class="form-group">
                                           <label for="title" class="control-label">Bank Account Name<span class="required">*</span></label>
                                               <input type="text" name="bank_account_name" class="form-control" id="bank_account_name" placeholder="Bank Account Name" value="{{old('bank_account_name')}}" />
@@ -141,13 +147,7 @@
                                               <strong class="text-danger">{{$message}}</strong>
                                               @enderror
                                       </div>
-                                      <div class="form-group">
-                                          <label for="title" class="control-label">Contact Numbar<span class="required">*</span></label>
-                                              <input type="text" name="contact_numbar" class="form-control" id="title" placeholder="Contact Numbar" value="{{old('contact_numbar')}}" />
-                                              @error('contact_numbar')
-                                              <strong class="text-danger">{{$message}}</strong>
-                                              @enderror
-                                      </div>
+                                     
                                       <div class="form-group">
                                           <label for="title" class="control-label">Submission ID 1</label>
                                               <input type="text" name="submission_id1" class="form-control" id="submission_id1" placeholder="Submission ID 1" value="{{old('submission_id1')}}" />

@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.7
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jan 05, 2022 at 10:58 PM
--- Server version: 10.3.32-MariaDB-cll-lve
--- PHP Version: 7.3.33
+-- Host: 127.0.0.1
+-- Generation Time: Jan 26, 2022 at 05:33 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -370,7 +369,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Md Abubakar', 'asonlinebd18@gmail.com', NULL, '$2y$10$uGDVxM8VRomEU3vXC33U1OFvKkIf13in54GoCtym.jQUzu6Ap8peu', '9JqOMm88j8ES48bvaVqF627N6uh4YoFtdqDBj8BFER6cRkbxbs2MOYhL84cM', '2020-06-15 09:31:03', '2020-06-15 09:31:03'),
+(1, 'Md Abubakar', 'asonlinebd18@gmail.com', NULL, '$2y$10$uGDVxM8VRomEU3vXC33U1OFvKkIf13in54GoCtym.jQUzu6Ap8peu', 'MFbg8ESMNepCZpVijcx8ztjypbBWzlverIQoZxMwoNyk9pNDnoF4gaoXlMCA', '2020-06-15 09:31:03', '2020-06-15 09:31:03'),
 (2, 'Abul Hasan Rakib', 'mahasan5840@gmail.com', NULL, '$2y$10$uGDVxM8VRomEU3vXC33U1OFvKkIf13in54GoCtym.jQUzu6Ap8peu', 'zdbJCiYz09kOeiPhc23afd5CVeDYbLQqPSB4YVvlijPriHf6jnCXNQIGgwk1', '2020-06-15 09:46:58', '2020-07-03 12:02:53');
 
 -- --------------------------------------------------------
@@ -381,7 +380,7 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 
 CREATE TABLE `works` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `client_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `company_name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `company_address` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `name_of_owner` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -423,8 +422,9 @@ CREATE TABLE `works` (
 -- Dumping data for table `works`
 --
 
-INSERT INTO `works` (`id`, `client_id`, `company_name`, `company_address`, `name_of_owner`, `trade_license_no`, `trade_license_issue_date`, `national_id`, `tin_certificate`, `bank_account_numbar`, `bank_account_name`, `bank_name`, `bank_branch_name`, `submission_id1`, `submission_id2`, `gmail`, `gmail_password`, `contact_numbar`, `contract`, `payment`, `due`, `note`, `images1`, `images2`, `images3`, `images4`, `images5`, `images6`, `images7`, `images8`, `images9`, `images10`, `status`, `payment_status`, `sms_status`, `created_at`, `updated_at`) VALUES
-(24, '11', 'Barguna It', 'Barguna', 'Md Abubakar', '34454', '544', 'ty54445', '454646546', '45654646', 'dfgb', 'barguna', 'sdfgg', '54tregdfg', '45644', 'sdfgf', 'dcgfdg', 'dgdgdf', 1000.00, 500.00, 500.00, 'taka daba pora', '16343866601.jpeg', '16343618002.jpeg', '16343618003.jpeg', '16343866764.jpeg', '16343618005.jpeg', '16343618006.pdf', '16343618007.pdf', '16343618008.jpeg', '16343618009.jpeg', '1634361800.jpeg', 1, 2, 3, '2021-10-15 23:23:20', '2021-10-16 07:37:02');
+INSERT INTO `works` (`id`, `name`, `company_name`, `company_address`, `name_of_owner`, `trade_license_no`, `trade_license_issue_date`, `national_id`, `tin_certificate`, `bank_account_numbar`, `bank_account_name`, `bank_name`, `bank_branch_name`, `submission_id1`, `submission_id2`, `gmail`, `gmail_password`, `contact_numbar`, `contract`, `payment`, `due`, `note`, `images1`, `images2`, `images3`, `images4`, `images5`, `images6`, `images7`, `images8`, `images9`, `images10`, `status`, `payment_status`, `sms_status`, `created_at`, `updated_at`) VALUES
+(34, 'Md Abubakar', 'Barguna It', 'Barguna', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '0147888544777', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, 1, '2022-01-26 10:12:35', '2022-01-26 10:26:33'),
+(35, 'Md Abubakar', 'Barguna It', 'Barguna', 'Md Abubakar', NULL, NULL, NULL, NULL, NULL, NULL, 'barguna', 'sdfgg', NULL, NULL, 'Barguna', 'dcgfdg', '0115155511', NULL, NULL, NULL, NULL, '16432137321.jpeg', '16432143122.png', '16432143123.jpeg', '16432143124.jpeg', NULL, NULL, NULL, NULL, NULL, NULL, 0, 0, 1, '2022-01-26 10:15:32', '2022-01-26 10:25:12');
 
 --
 -- Indexes for dumped tables
@@ -583,7 +583,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `works`
 --
 ALTER TABLE `works`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

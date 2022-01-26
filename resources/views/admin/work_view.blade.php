@@ -31,22 +31,12 @@
 
                                     <div class="form-group">
                                         <label for="title" class="control-label">Name</label>
-                                            <input type="text"  class="form-control"  value="{{ $work->client->name }}" readonly/>
+                                            <input type="text"  class="form-control"  value="{{ $work->name }}" readonly/>
                                       </div>
                                       <div class="form-group">
-                                          <label for="title" class="control-label">Mobile<span class="required">*</span></label>
-                                              <input type="text"  class="form-control" value="{{ $work->client->mobile }}" readonly/>
-                                              @error('due')
-                                              <strong class="text-danger">{{$message}}</strong>
-                                              @enderror
-                                      </div>
-                                      <div class="form-group">
-                                          <label for="due" class="control-label">Service</label>
-                                              <input type="numbar" class="form-control" value="{{ $work->client->service }}" readonly/>
-                                              @error('due')
-                                              <strong class="text-danger">{{$message}}</strong>
-                                              @enderror
-                                      </div>
+                                        <label for="title" class="control-label">Mobile</label>
+                                            <input type="text" class="form-control"  value="{{$work->contact_numbar}}" readonly/>
+                                    </div>
                                     <div class="form-group">
                                         <label for="title" class="control-label">Company Name</label>
                                             <input type="text" class="form-control" value="{{$work->company_name}}" readonly/>
@@ -60,10 +50,7 @@
                                             <input type="text" class="form-control" value="{{$work->name_of_owner}}" readonly/>
 
                                     </div>
-                                    <div class="form-group">
-                                        <label for="title" class="control-label">Contact Numbar</label>
-                                            <input type="text" class="form-control"  value="{{$work->contact_numbar}}" readonly/>
-                                    </div>
+                                    
                                     <div class="form-group">
                                         <label for="title" class="control-label">Gmail Address</label>
                                             <input type="gmail" class="form-control" value="{{$work->gmail}}" readonly/>
